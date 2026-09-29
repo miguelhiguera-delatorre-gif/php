@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    
+    <!-- Web de lotería
+    El usuario introduce:
+    1. La combinacion de 6 numeros entre 1 y 49. 
+    2. Numero de serie entre 1 y 999.
+    Cuando lo introduzca se muestra la info del usuario y la aleatoria en una tabla de dos filas. -->
+
+    <form action="loteria.php" method="post">
+    Introduza el numero de cupon con numeros del 1 al 49 en cada celda<br>
+    <input type="number" name="numeroCupon1" placeholder="n1" min="1" max="49">
+    <input type="number" name="numeroCupon2" placeholder="n2" min="1" max="49">
+    <input type="number" name="numeroCupon3" placeholder="n3" min="1" max="49">
+    <input type="number" name="numeroCupon4" placeholder="n4" min="1" max="49">
+    <input type="number" name="numeroCupon5" placeholder="n5" min="1" max="49">
+    <input type="number" name="numeroCupon6" placeholder="n6" min="1" max="49">
+
+    <br>
+    Introduzca el numero de serie entre 1 y 999:
+    <br>
+
+    <input type="number" name="numeroSerie" placeholder="Entre 1 y 999" min="1" max="999">
+    <br>
+    <br>
+    <button type="submit">Ver resultado</button>
+
+</form>
+</body>
+</html>
