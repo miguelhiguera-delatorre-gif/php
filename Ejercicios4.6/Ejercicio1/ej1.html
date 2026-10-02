@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina la imagen">
+
+    <style>
+
+        body {
+            text-align: center;
+        }
+
+        .cuadricula {
+            width: 600px;
+            margin: auto;
+        }
+
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Adivina la imagen</h1>
+
+    <div class="cuadricula">
+
+        <a href="juego.php?cuadrado=1">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=2">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=3">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=4">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=5">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=6">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=7">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=8">
+            <div class="cuadrado"></div>
+        </a>
+
+        <a href="juego.php?cuadrado=9">
+            <div class="cuadrado"></div>
+        </a>
+
+    </div>
+
+    <br>
+
+    <form action="juego.php" method="post">
+
+        <input type="text" name="respuesta">
+
+        <button type="submit">Comprobar</button>
+
+    </form>
+
+</body>
+</html>
