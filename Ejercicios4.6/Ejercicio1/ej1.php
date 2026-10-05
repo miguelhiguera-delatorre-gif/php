@@ -1,37 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina la imagen</title>
 
-<?php
+    <style>
+        /* Hacemos la cuadrícula de 3x3 */
+        .cuadricula {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows: repeat(3, 150px);
+            gap: 5px;
+        }
 
-// Si el usuario ha escrito una respuesta
-if (isset($_POST['respuesta'])) {
+        /* Cada cuadrado */
+        .cuadrado {
+            width: 150px;
+            height: 150px;
+            background-color: gray;
+            cursor: pointer;
+        }
 
-    $respuesta = $_POST['respuesta'];
+        /* Imagen que está oculta */
+        .cuadrado img {
+            width: 100%;
+            height: 100%;
+            display: none;
+            object-fit: cover;
+        }
+    </style>
+</head>
 
-    if ($respuesta == "perro") {
+<body>
 
-        echo "<h1>¡Has acertado!</h1>";
-        echo '<img src="imagen.jpg" width="600">';
+    <h1>Adivina la imagen</h1>
 
-    } else {
+    <p>Pulsa en los cuadrados para descubrir partes de la imagen.</p>
 
-        echo "<h1>Has fallado</h1>";
-        echo '<a href="index.html">Volver</a>';
+    <!-- Cuadrícula de 3x3 -->
+    <div class="cuadricula">
 
-    }
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
 
-}
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+        <div class="cuadrado" onclick="mostrar(this)">
+            <img src="asta.jpg">
+        </div>
+
+    </div>
+
+    <br>
+
+    <!-- Formulario para escribir la respuesta -->
+    <form action="comprobar.php" method="post">
+
+        <label>¿Qué aparece en la imagen?</label>
+
+        <input type="text" name="respuesta">
+
+        <button type="submit">Comprobar</button>
+
+    </form>
 
 
-// Si el usuario ha pulsado un cuadrado
-if (isset($_GET['cuadrado'])) {
+    <script>
 
-    $cuadrado = $_GET['cuadrado'];
+        // Esta función muestra el cuadrado durante 2 segundos
+        function mostrar(cuadrado) {
 
-    echo "<h1>Has pulsado el cuadrado $cuadrado</h1>";
+            // Buscamos la imagen que está dentro del cuadrado
+            let imagen = cuadrado.querySelector("img");
 
-    echo '<img src="imagen.jpg" width="200">';
+            // Mostramos la imagen
+            imagen.style.display = "block";
 
-    echo '<meta http-equiv="refresh" content="2;url=index.html">';
+            // Esperamos 2 segundos
+            setTimeout(function() {
 
-}
+                // Volvemos a ocultar la imagen
+                imagen.style.display = "none";
 
-?>
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+</html>
