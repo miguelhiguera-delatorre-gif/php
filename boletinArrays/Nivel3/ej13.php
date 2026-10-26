@@ -10,6 +10,7 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+
         table{
             border-collapse: collapse;
             
