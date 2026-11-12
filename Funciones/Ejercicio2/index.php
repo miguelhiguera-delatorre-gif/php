@@ -3,8 +3,8 @@ require_once __DIR__ . "/funciones.php";
 
 $columnas = ['A', 'B', 'C', 'D', 'E'];
 
-// Si se envía el formulario, mantenemos las coordenadas enviadas
-// Si se recarga la página por primera vez, las generamos aleatoriamente
+// Si se envia el formulario, mantenemos las coordenadas enviadas
+// Si se recarga la pagina por primera vez, las generamos aleatoriamente
 if (isset($_POST["acceder"])) {
     $filaSel = $_POST["fila"];
     $columnaSel = $_POST["columna"];
@@ -64,10 +64,10 @@ if (isset($_POST["acceder"])) {
         $columna = $_POST["columna"];
         $valor = $_POST["valor"];
 
-        // Obtenemos la tarjeta correspondiente al perfil
+        // vemos la tarjeta correspondiente al perfil
         $tarjeta = dameTarjeta($perfil, $tarjetaAdmin, $tarjetaUsuario);
 
-        // Comprobamos si la clave es correcta
+        // comrpobamos si la clave es correcta
         $correcto = compruebaClave($tarjeta, (int)$fila, $columna, (int)$valor);
 
         if($correcto){
