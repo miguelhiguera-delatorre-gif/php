@@ -68,13 +68,15 @@
                 $contadorPalabras++;
             }
 
-            // Actualizamos la posición para la siguiente palabra.
+            // Actualizamos la posición para la siguiente palabra
             $posicion += $longitud + 1;
         }
 
         // Mostramos los resultados.
         echo "<h3>Resultados:</h3>";
 
+        echo $texto ."<br><br>";
+        
         echo "Posición inicial de la palabra más larga: " . $posicionInicial . "<br>";
 
         echo "Longitud de la palabra más larga: " . $longitudMaxima . "<br>";

@@ -18,17 +18,16 @@
     </form>
 
     <?php
-
-    // Comprobamos si se ha enviado el formulario.
+    // Comprobamos si se ha enviado el formulario
     if (isset($_POST['telegrama'])) {
 
-        // Guardamos el texto introducido.
+        // Guardamos el texto introducido
         $telegrama = strtolower($_POST['telegrama']);
 
-        // Separamos el telegrama en palabras utilizando los espacios.
+        // Separamos el telegrama en palabras utilizando los espacios
         $palabras = explode(" ", $telegrama);
 
-        // Inicializamos el contador de palabras de más de 10 letras.
+        // Inicializamos el contador de palabras de más de 10 letras
         $contadorPalabras = 0;
 
         // Inicializamos los contadores de las vocales.
@@ -38,13 +37,13 @@
         $o = 0;
         $u = 0;
 
-        // Inicializamos el contador de espacios.
+        // Inicializamos el contador de espacios
         $espacios = 0;
 
-        // Recorremos todas las palabras del telegrama.
+        // Recorremos todas las palabras del telegrama
         foreach ($palabras as $palabra) {
 
-            // Comprobamos si la palabra tiene más de 10 caracteres.
+            // Comprobamos si la palabra tiene más de 10 caracteres
             if (strlen($palabra) > 10) {
                 $contadorPalabras++;
             }
@@ -80,6 +79,7 @@
 
         // Mostramos los resultados
         echo "<h3>Resultados:</h3>";
+        echo $telegrama. "<br><br>";
 
         echo "Palabras con más de 10 letras: " . $contadorPalabras . "<br>";
 

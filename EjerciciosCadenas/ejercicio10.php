@@ -26,10 +26,9 @@
         foreach ($palabras as $palabra) {
 
             $nombreMayusculas .= ucfirst(strtolower($palabra)) . " ";
-            // Convertimos la palabra a minúsculas y ponemos su primera letra en mayúscula.
-            // Después la añadimos a la variable junto con un espacio.
+            //pasamos la palabra a minúsculas y ponemos su primera letra en mayuscula
 
-            // Obtenemos el primer carácter de cada palabra y lo añadimos a las iniciales.
+            // obtenemos el primer caracter de cada palabra y lo añadimos a las iniciales.
             $iniciales .= substr($palabra, 0, 1);
         }
 
