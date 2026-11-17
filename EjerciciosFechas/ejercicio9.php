@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio9</title>
+    <title>Biblioteca</title>
+    <style>
+        *{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+        input[type='submit']{background-color: gray;padding: 5px;}
+        form{width: fit-content; border: 2px solid black; background-color: lightblue; border-radius: 5px;padding: 5px;}
+        
+    </style>
 </head>
-
 <body>
-    <!-- Realizar una pequeña aplicación web para una biblioteca online. 
-     La aplicación debe pedir la fecha en la que se prestó el libro.
-      Si no han pasado más de 15 días, indicar el mensaje
-"Devolución realizada con éxito". Si han pasado más de 15 días, calcular cuánto debe abonar el
-cliente, que debe ser 2 euros por cada día de retraso. Para la comprobación de los días no se
-tendrá en cuenta la hora, minutos y segundos, solo el día. 
 
--->
+    <form method="POST">
+        <label>Fecha del préstamo:</label><br>
+        <input type="date" name="fecha" required><br><br>
+        <input type="submit" value="Devolver libro"><br>
+    </form>
+
+    <?php
+    if (isset($_POST['fecha'])) {
+
+        $fechaPrestamo = new DateTime($_POST['fecha']);
+        $fechaActual = new DateTime(date("Y-m-d"));
+
+        $dias = $fechaPrestamo->diff($fechaActual)->days;
+
+        if ($dias <= 15) {
+            echo "Devolución realizada con éxito";
+        } else {
+            $retraso = $dias - 15;
+            $precio = $retraso * 2;
+
+            echo "Tienes un retraso de $retraso días.";
+            echo "<br>Debes abonar $precio euros.";
+        }
+    }
+    ?>
+
 </body>
-
 </html>
